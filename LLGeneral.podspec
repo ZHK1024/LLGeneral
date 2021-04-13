@@ -34,8 +34,34 @@ TODO: Add long description of the pod here.
 
   s.source_files = 'LLGeneral/Classes/**'
   
+  #**********************
+  # Math
   s.subspec 'Math' do |math|
       math.source_files = 'LLGeneral/Classes/Math/**/*'
+  end
+  
+  #**********************
+  # Extensions
+  s.subspec 'Extensions' do |ext|
+      # CoreGraphics
+      ext.subspec 'CoreGraphics' do |cg|
+          cg.source_files = 'LLGeneral/Classes/Extensions/CoreGraphics/**/*'
+      end
+      
+      # CoreImage
+      ext.subspec 'CoreImage' do |ci|
+          ci.source_files = 'LLGeneral/Classes/Extensions/CoreImage/**/*'
+      end
+      
+      # Foundation
+      ext.subspec 'Foundation' do |fd|
+          fd.source_files = 'LLGeneral/Classes/Extensions/Foundation/**/*'
+      end
+      
+      # UIKit
+      ext.subspec 'UIKit' do |ui|
+          ui.source_files = 'LLGeneral/Classes/Extensions/UIKit/**/*'
+      end
   end
   
   # s.resource_bundles = {
