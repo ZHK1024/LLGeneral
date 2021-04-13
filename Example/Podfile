@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '11.0'
+
+target 'LLGeneral_Example' do
+  pod 'LLGeneral', :path => '../'
+
+#  target 'LLGeneral_Tests' do
+#    inherit! :search_paths
+#
+#    pod 'FBSnapshotTestCase' , '~> 2.1.4'
+#  end
+end
