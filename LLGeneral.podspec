@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'LLGeneral'
-  s.version          = '0.1.1'
+  s.version          = '0.1.2'
   s.summary          = '常用代码库.'
 
 # This description is used to generate tags and improve search results.
@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 
   s.description      = <<-DESC
-TODO: Add long description of the pod here.
+ 常用代码封装, 扩展.
                        DESC
 
   s.homepage         = 'https://github.com/ZHK1024/LLGeneral'
