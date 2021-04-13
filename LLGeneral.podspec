@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'LLGeneral'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = '常用代码库.'
 
 # This description is used to generate tags and improve search results.
@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
 TODO: Add long description of the pod here.
                        DESC
 
-  s.homepage         = 'https://github.com/ruris/LLGeneral'
+  s.homepage         = 'https://github.com/ZHK1024/LLGeneral'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { ' ZHK1024' => 'ZHK1024@foxmail.com' }
@@ -32,8 +32,7 @@ TODO: Add long description of the pod here.
   
   s.swift_version = '5.0'
 
-  s.source_files = 'LLGeneral/Classes/**/*'
-  
+  s.source_files = 'LLGeneral/Classes/**'
   
   s.subspec 'Math' do |math|
       math.source_files = 'LLGeneral/Classes/Math/**/*'
