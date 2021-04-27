@@ -4,7 +4,7 @@ platform :ios, '11.0'
 
 target 'LLGeneral_Example' do
   pod 'LLGeneral', :path => '../'
-
+  pod 'LLGeneral/UI', :path => '../'
 #  target 'LLGeneral_Tests' do
 #    inherit! :search_paths
 #

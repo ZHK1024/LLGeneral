@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'LLGeneral'
-  s.version          = '0.1.2'
+  s.version          = '0.1.3'
   s.summary          = '常用代码库.'
 
 # This description is used to generate tags and improve search results.
@@ -62,6 +62,24 @@ Pod::Spec.new do |s|
       ext.subspec 'UIKit' do |ui|
           ui.source_files = 'LLGeneral/Classes/Extensions/UIKit/**/*'
       end
+  end
+
+  #**********************
+  # UI
+
+  s.subspec 'UI' do |ui|
+
+    # LLGudie
+    ui.subspec 'LLGudie' do |guide|
+        guide.source_files = 'LLGeneral/Classes/UI/LLGuide/*'
+    end
+
+    # LLAbout
+    ui.subspec 'LLAbout' do |about|
+        about.source_files = 'LLGeneral/Classes/UI/LLAbout/**/*'
+        about.dependency 'Masonry', '>= 1.1.0'
+        about.dependency 'QMUIKit', '>= 4.1.3'
+    end
   end
   
   # s.resource_bundles = {
