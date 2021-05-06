@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'LLGeneral'
-  s.version          = '0.1.3'
+  s.version          = '0.1.4'
   s.summary          = '常用代码库.'
 
 # This description is used to generate tags and improve search results.
@@ -77,9 +77,15 @@ Pod::Spec.new do |s|
     # LLAbout
     ui.subspec 'LLAbout' do |about|
         about.source_files = 'LLGeneral/Classes/UI/LLAbout/**/*'
-        about.dependency 'Masonry', '>= 1.1.0'
-        about.dependency 'QMUIKit', '>= 4.1.3'
+        about.dependency 'SnapKit'
+#        about.dependency 'QMUIKit', '>= 4.1.3'
+        about.dependency 'LLObject'
     end
+    
+    ui.subspec 'Performance' do |pf|
+        pf.source_files = 'LLGeneral/Classes/UI/Performance/**/*'
+    end
+    
   end
   
   # s.resource_bundles = {

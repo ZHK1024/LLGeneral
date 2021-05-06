@@ -7,12 +7,16 @@
 //
 
 import UIKit
+import LLGeneral
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, LLAboutable {
+    
+//    typealias Model = <#type#>
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        about_setupUI()
     }
 
     override func didReceiveMemoryWarning() {
