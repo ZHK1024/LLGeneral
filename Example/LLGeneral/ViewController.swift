@@ -9,14 +9,22 @@
 import UIKit
 import LLGeneral
 
-class ViewController: UIViewController, LLAboutable {
+class ViewController: UIViewController {
+//    typealias Model = <#type#>
+    
     
 //    typealias Model = <#type#>
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        about_setupUI()
+//        about_setupUI()
+        
+        print("aa@qq.com".matches(regular: "^[\\w]+@[\\w.]+$"))
+//        "aa@qq.com".matches(regular: "^[\\w]+@[\\w.]+$") {
+//            print($0)
+//            return true
+//        }
     }
 
     override func didReceiveMemoryWarning() {

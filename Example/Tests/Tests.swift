@@ -1,5 +1,5 @@
 import XCTest
-//import LLGeneral
+@testable import LLGeneral
 
 
 class Tests: XCTestCase {
@@ -15,8 +15,24 @@ class Tests: XCTestCase {
     }
     
     func testExample() {
-        // This is an example of a functional test case.
-        XCTAssert(true, "Pass")
+        let regx = "^\\w+@[\\w.]+$"
+        
+        let trues = [
+            "sina123@ds.com",
+            "da2131@qq",
+            "3213@ewq."
+        ]
+        
+        let falses = [
+            "daasfsa.",
+            ".",
+            "@",
+            " "
+        ]
+        
+        let res = trues.map { $0.matches(regular: regx) } + falses.map { $0.matches(regular: regx) }
+        
+        XCTAssertFalse(res.contains(false))
     }
     
     func testPerformanceExample() {
