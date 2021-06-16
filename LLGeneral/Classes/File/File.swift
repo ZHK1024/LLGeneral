@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct File {}
+public struct File {}
 
 
 extension File {
