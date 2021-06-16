@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'LLGeneral'
-  s.version          = '0.1.5'
+  s.version          = '0.2.0'
   s.summary          = '常用代码库.'
 
 # This description is used to generate tags and improve search results.
@@ -86,6 +86,10 @@ Pod::Spec.new do |s|
         pf.source_files = 'LLGeneral/Classes/UI/Performance/**/*'
     end
     
+  end
+  
+  s.subspec 'File' do |file|
+      file.source_files = 'LLGeneral/Classes/File/**/*'
   end
   
   # s.resource_bundles = {
