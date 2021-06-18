@@ -35,6 +35,17 @@ class Tests: XCTestCase {
         XCTAssertFalse(res.contains(false))
     }
     
+    func testClamp() {
+        let result = [
+            10.clamp(20...30) == 20,
+            10.clamp(0...5) == 5,
+            10.clamp(10...15) == 10,
+            10.clamp(0...10) == 10,
+            10.clamp(0.5...12.5) == 10
+        ].reduce(true, { $0 && $1 })
+        XCTAssertTrue(result)
+    }
+    
     func testPerformanceExample() {
         // This is an example of a performance test case.
         self.measure() {
