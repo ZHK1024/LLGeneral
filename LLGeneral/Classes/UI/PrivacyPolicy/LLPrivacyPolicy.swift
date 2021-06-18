@@ -14,6 +14,8 @@ import AppTrackingTransparency
 /// 隐私政策
 public struct LLPrivacyPolicy {
     
+    public typealias LLPrivacyPolicyRequestResult = (AuthorizationStatus) -> Void
+    
     /// 权限请求状态
     public static var authorizationStatus: AuthorizationStatus {
         set {
@@ -27,8 +29,6 @@ public struct LLPrivacyPolicy {
             return AuthorizationStatus(rawValue: rawValue) ?? .unknown
         }
     }
-    
-    public typealias LLPrivacyPolicyRequestResult = (AuthorizationStatus) -> Void
     
     /// 重置权限状态 (如果有重新发起授权需求的需求话)
     public static func resetAuthorizationStatus() {

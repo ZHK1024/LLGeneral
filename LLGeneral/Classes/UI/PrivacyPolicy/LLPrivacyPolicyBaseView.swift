@@ -72,7 +72,6 @@ class LLPrivacyPolicyBaseView: UIView, LLPrivacyPolicyView {
             titleLabel.sizeToFit()
         }
         
-//        addSubview(effectView)
         addSubview(stackView)
         layer.addSublayer(separator)
         
@@ -81,11 +80,6 @@ class LLPrivacyPolicyBaseView: UIView, LLPrivacyPolicyView {
         
         rejectButton.backgroundColor = .white
         agreeButton.backgroundColor = .white
-        
-//        rejectButton.setTitle("不同意", for: .normal)
-//        rejectButton.setTitleColor(.gray, for: .normal)
-//        agreeButton.setTitle("同意", for: .normal)
-//        agreeButton.setTitleColor(.black, for: .normal)
         
         rejectButton.addTarget(self, action: #selector(reject), for: .touchUpInside)
         agreeButton.addTarget(self, action: #selector(agree), for: .touchUpInside)
@@ -129,14 +123,14 @@ class LLPrivacyPolicyBaseView: UIView, LLPrivacyPolicyView {
     // MARK: Action
     
     @objc private func agree() {
+        dismiss()
         LLPrivacyPolicy.authorizationStatus = .agree
         callback?(.agree)
-        dismiss()
     }
     
     @objc private func reject() {
+        dismiss()
         LLPrivacyPolicy.authorizationStatus = .reject
         callback?(.reject)
-        dismiss()
     }
 }
