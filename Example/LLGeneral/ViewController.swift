@@ -22,7 +22,7 @@ class ViewController: UIViewController {
 //            return true
 //        }
         
-        testPrivacyPolicy()
+//        testPrivacyPolicy()
     }
 
     override func didReceiveMemoryWarning() {

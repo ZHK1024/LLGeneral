@@ -60,18 +60,24 @@ public struct LLPrivacyPolicy {
     public static func requestAuthorization<T: LLPrivacyPolicyView>(view: T, complete: @escaping LLPrivacyPolicyRequestResult) {
         /// 如果已经询问过, 则不再提示
         guard authorizationStatus == .unknown else { return }
-        /// UIWindow
-        let window = UIWindow(frame: UIScreen.main.bounds)
-        window.windowLevel = .alert
-        window.makeKeyAndVisible()
-        window.backgroundColor = UIColor.black.withAlphaComponent(0.1)
-        window.isOpaque = false
-        
-        /// 添加视图
-        window.addSubview(view)
-        view.center = window.center
-        view.callback = complete
-        view.windowHolder = window
+
+        /// 异步执行!!!
+        /// 在 app 未初始化完成时候同步执行会报如下错误, 因此在 app 完全初始化完成之后再新建 UIWindow 对象.
+        /// `*** Terminating app due to uncaught exception 'NSInternalInconsistencyException', reason: 'Application windows are expected to have a root view controller at the end of application launch'`
+        DispatchQueue.main.async {
+            /// UIWindow
+            let window = UIWindow(frame: UIScreen.main.bounds)
+            window.windowLevel = .alert
+            window.makeKeyAndVisible()
+            window.backgroundColor = UIColor.black.withAlphaComponent(0.1)
+            window.isOpaque = false
+            
+            /// 添加视图
+            window.addSubview(view)
+            view.center = window.center
+            view.callback = complete
+            view.windowHolder = window
+        }
     }
     
     /// 授权状态
