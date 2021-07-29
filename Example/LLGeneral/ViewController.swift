@@ -23,6 +23,7 @@ class ViewController: UIViewController {
 //        }
         
 //        testPrivacyPolicy()
+    
     }
 
     override func didReceiveMemoryWarning() {
@@ -55,6 +56,10 @@ class ViewController: UIViewController {
 //        LLPrivacyPolicy.requestAuthorization(policyURL: URL(string: "https://maka.im/appweb/mori/private_policy")!) { status in
 //            print(status)
 //        }
+        
+        
+        
+        
     }
 }
 
