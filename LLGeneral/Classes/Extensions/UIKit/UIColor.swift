@@ -31,6 +31,15 @@ extension UIColor {
         UIColor(red: red / 255.0, green: greeb / 255.0, blue: blue / 255.0, alpha: alpha)
     }
     
+    /// 灰色
+    /// - Parameters:
+    ///   - value: RGB 值
+    ///   - alpha: 透明度
+    /// - Returns: UIColor 对象
+    public static func gray(_ value: CGFloat, _ alpha: CGFloat = 1.0) -> UIColor {
+        .rgba(value, value, value, alpha)
+    }
+    
     /// 随机颜色
     public static var random: UIColor {
         .init(red: CGFloat.random(in: 0.0...1.0),
