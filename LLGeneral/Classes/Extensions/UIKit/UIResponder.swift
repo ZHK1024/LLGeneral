@@ -10,6 +10,14 @@ import Foundation
 
 extension UIResponder {
     
+    /// **注意**
+    /// `find` 方法不能在 `viewDidLoad` 中调用, 获取到的值一直是 `nil`
+    /// 原因: `viewDidLoad` 被调用的时候, `view` 还未被添加到上一层级的视图上,  所以 `view.superView = nil`.
+    ///       1. `view.nextResponder = view.superView`
+    ///       2. `UIViewController.nextResponder = view.nextResponder`
+    ///       因此此刻 `UIViewController.nextResponder` 为 `nil` 导致 `find` 方法不能遍历完整的 `响应链` 因此无法获取正确的结果.
+    
+    
     /// 根据条件查找响应链上的 `UIResponder` 子类对象
     /// - Parameter finder: 查找逻辑
     /// - Returns: 查找结果

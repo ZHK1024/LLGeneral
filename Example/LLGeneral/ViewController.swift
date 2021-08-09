@@ -23,8 +23,12 @@ class ViewController: UIViewController {
 //        }
         
 //        testPrivacyPolicy()
+
+    }
     
-        
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        print(find(finder: { $0 as? UINavigationController }))
     }
 
     override func didReceiveMemoryWarning() {
