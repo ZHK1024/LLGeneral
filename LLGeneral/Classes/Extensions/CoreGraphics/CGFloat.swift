@@ -14,6 +14,9 @@ extension CGFloat {
     public static let scaleX = UIScreen.width / 414.0
     public static let scaleY = UIScreen.height / 818.0
     
+    /// 一像素
+    public static let pix_1 = 1 / UIScreen.main.scale
+    
     /// 按屏幕宽度比例计算的数字
     public static let float3  = 03.0 * CGFloat.scaleX
     public static let float5  = 05.0 * CGFloat.scaleX
