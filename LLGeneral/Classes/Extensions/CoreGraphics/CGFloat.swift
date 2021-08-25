@@ -17,7 +17,7 @@ extension CGFloat {
     /// 一像素
     public static let pix_1 = 1 / UIScreen.main.scale
     
-    /// 按屏幕宽度比例计算的数字
+    /// 按屏幕宽度比例计算的常用数字
     public static let float3  = 03.0 * CGFloat.scaleX
     public static let float5  = 05.0 * CGFloat.scaleX
     public static let float6  = 06.0 * CGFloat.scaleX
@@ -38,8 +38,9 @@ extension CGFloat {
     public static let float23 = 23.0 * CGFloat.scaleX
     public static let float24 = 24.0 * CGFloat.scaleX
     
+    /// 状态栏高度
     public static var statusBarHeight: CGFloat {
-        UIApplication.shared.statusBarFrame.height
+        return UIApplication.shared.statusBarFrame.height
     }
 }
 

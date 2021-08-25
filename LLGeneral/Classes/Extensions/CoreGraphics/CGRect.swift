@@ -19,16 +19,6 @@ extension CGRect {
         set { origin = CGPoint(x: x, y: newValue) }
         get { origin.y }
     }
-    
-//    public var width: CGFloat {
-//        set { size = CGSize(width: newValue, height: height) }
-//        get { size.width }
-//    }
-//
-//    public var height: CGFloat {
-//        set { size = CGSize(width: width, height: newValue) }
-//        get { size.height }
-//    }
 }
 
 /// 重组 (Recombine)
@@ -66,14 +56,14 @@ extension CGRect {
     /// - Parameter origin: origin 值
     /// - Returns: 新 CGRect
     public func rec(origin: CGPoint) -> CGRect {
-        CGRect(x: origin.x , y: origin.y, width: width, height: height)
+        CGRect(origin: origin, size: size)
     }
     
     /// 使用新的 size 值重组 CGRect
     /// - Parameter size: size 值
     /// - Returns: 新 CGRect
     public func rec(size: CGSize) -> CGRect {
-        CGRect(x: x , y: y, width: size.width, height: size.height)
+        CGRect(origin: origin, size: size)
     }
 }
 
