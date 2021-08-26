@@ -23,6 +23,7 @@ class ViewController: UIViewController {
 //        }
         
 //        testPrivacyPolicy()
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {

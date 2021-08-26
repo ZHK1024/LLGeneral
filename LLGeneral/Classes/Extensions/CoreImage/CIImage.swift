@@ -36,4 +36,29 @@ public extension CIImage {
         let scaledImage = bitmap.makeImage()
         return UIImage.init(cgImage: scaledImage!)
     }
+    
+    /// 获取二维码文本信息
+    /// - Returns: 文本信息
+    func QRCodeMessage() -> String? {
+        // 1. 创建上下文
+        let context = CIContext()
+        // 2. 创建一个探测器
+        let detector = CIDetector(ofType: CIDetectorTypeQRCode, context: context, options: [
+            CIDetectorAccuracy : CIDetectorAccuracyLow
+        ])
+        // 3. 识别图片,获取图片特征
+        let feature = detector?.features(in: self).first as? CIQRCodeFeature
+        return feature?.messageString
+    }
+    
+    /// 创建二维码图片
+    /// - Parameter data: 二进制数据
+    /// - Returns: CIImage 对象
+    static func ciimage(data: Data) -> CIImage? {
+        // 创建过滤器
+        guard let filter = CIFilter(name: "CIQRCodeGenerator") else { return nil }
+        filter.setDefaults()
+        filter.setValue(data, forKey: "inputMessage")
+        return filter.outputImage
+    }
 }
