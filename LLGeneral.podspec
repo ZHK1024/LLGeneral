@@ -105,7 +105,7 @@ Pod::Spec.new do |s|
   #   'LLGeneral' => ['LLGeneral/Assets/*.png']
   # }
   
-  spec.default_subspec = 'Math', 'Extensions'
+  s.default_subspec = 'Math', 'Extensions'
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
