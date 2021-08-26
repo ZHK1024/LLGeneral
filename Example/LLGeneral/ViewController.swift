@@ -23,7 +23,6 @@ class ViewController: UIViewController {
 //        }
         
 //        testPrivacyPolicy()
-
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -47,7 +46,6 @@ class ViewController: UIViewController {
         
         LLPrivacyPolicy.resetAuthorizationStatus()
         
-        
         let modifier = LLPrivacyPolicyModifier()
         modifier.title = NSAttributedString(string: "隐私政策", attributes: [
             .font : UIFont.boldSystemFont(ofSize: 18.0)
@@ -61,17 +59,5 @@ class ViewController: UIViewController {
 //        LLPrivacyPolicy.requestAuthorization(policyURL: URL(string: "https://maka.im/appweb/mori/private_policy")!) { status in
 //            print(status)
 //        }
-        
-        
-        
-        
     }
 }
-
-/*
- 
- 
- textView.text = """
-     
-     """
- */

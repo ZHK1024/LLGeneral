@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'LLGeneral'
-  s.version          = '0.3.9'
+  s.version          = '0.4.0'
   s.summary          = '常用代码库.'
 
 # This description is used to generate tags and improve search results.
@@ -104,6 +104,8 @@ Pod::Spec.new do |s|
   # s.resource_bundles = {
   #   'LLGeneral' => ['LLGeneral/Assets/*.png']
   # }
+  
+  spec.default_subspec = 'Math', 'Extensions'
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'
