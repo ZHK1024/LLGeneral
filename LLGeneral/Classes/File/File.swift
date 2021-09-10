@@ -40,4 +40,25 @@ extension File {
         }
         return nil
     }
+    
+    /// 移动文件 (如果有重名, 则在文件名后添加 `-序号` 来生成新的文件名)
+    /// - Parameters:
+    ///   - file: 目标文件
+    ///   - to:   目标地址
+    /// - Throws: 错误信息
+    /// - Returns: 移动后文件地址
+    public static func move(file: URL, to: URL) throws -> URL {
+        guard FileManager.default.fileExists(atPath: file.path) else {
+            throw NSError(domain: "com.zhk.error", code: 0, userInfo: [
+                NSLocalizedDescriptionKey : NSLocalizedString("File Not Exist", comment: "File Not Exist")
+            ])
+        }
+        var resultURL = to
+        var tag = 1
+        while FileManager.default.fileExists(atPath: to.path) == false {
+            resultURL = resultURL.deletingPathExtension().appendingPathComponent("-\(tag)" + resultURL.pathExtension)
+            tag += 1
+        }
+        return resultURL
+    }
 }
