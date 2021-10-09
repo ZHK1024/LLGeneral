@@ -35,9 +35,24 @@ Pod::Spec.new do |s|
   s.source_files = 'LLGeneral/Classes/**'
   
   #**********************
+  # Common
+  s.subspec 'Common' do |com|
+      com.subspec 'Defines' do |df|
+          df.source_files = 'LLGeneral/Classes/Common/Defines/**/*'
+      end
+  end
+  
+  #**********************
   # Math
   s.subspec 'Math' do |math|
       math.source_files = 'LLGeneral/Classes/Math/**/*'
+  end
+  
+  
+  #**********************
+  # PropertyWrapper
+  s.subspec 'PropertyWrapper' do |pw|
+      pw.source_files = 'LLGeneral/Classes/PropertyWrapper/*'
   end
   
   #**********************
@@ -105,7 +120,7 @@ Pod::Spec.new do |s|
   #   'LLGeneral' => ['LLGeneral/Assets/*.png']
   # }
   
-  s.default_subspec = 'Math', 'Extensions'
+  s.default_subspec = 'Math', 'Extensions', 'Common', 'PropertyWrapper'
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
   # s.frameworks = 'UIKit', 'MapKit'

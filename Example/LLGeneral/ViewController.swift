@@ -10,6 +10,21 @@ import UIKit
 import LLGeneral
 
 class ViewController: UIViewController {
+    
+    @SourceDecodable(.plist, .mainBundle, "PropertyWrapper_dic.plist", [:])
+    var info_dic: Dictionary<String, String>
+    
+    @SourceDecodable(.plist, .mainBundle, "PropertyWrapper_arr.plist", [])
+    var info_arr: [String]
+    
+    @SourceDecodable(.json, .mainBundle, "PropertyWrapper.json", [])
+    var info_json: [Student]
+    
+    struct Student: Decodable {
+        let name: String
+        let age: Int
+        
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,6 +41,9 @@ class ViewController: UIViewController {
         
 //        navigationController?.pushViewController(<#T##viewControllers: [UIViewController]##[UIViewController]#>, animated: <#T##Bool#>)
         
+        print(info_dic)
+        print(info_arr)
+        print(info_json)
     }
     
     override func viewDidAppear(_ animated: Bool) {
