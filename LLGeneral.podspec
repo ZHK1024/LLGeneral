@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'LLGeneral'
-  s.version          = '0.4.1'
+  s.version          = '0.4.2'
   s.summary          = '常用代码库.'
 
 # This description is used to generate tags and improve search results.
