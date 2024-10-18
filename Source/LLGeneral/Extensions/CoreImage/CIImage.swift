@@ -6,7 +6,7 @@
 //  
 //
 
-import CoreImage
+import UIKit
 
 public extension CIImage {
     

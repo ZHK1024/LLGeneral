@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import LLObject
+//import LLObject
 
 public protocol LLAboutable: UIViewController {
     

@@ -32,27 +32,27 @@ Pod::Spec.new do |s|
   
   s.swift_version = '5.5'
 
-  s.source_files = 'LLGeneral/Classes/**'
+  s.source_files = 'Source/LLGeneral/**'
   
   #**********************
   # Common
   s.subspec 'Common' do |com|
       com.subspec 'Defines' do |df|
-          df.source_files = 'LLGeneral/Classes/Common/Defines/**/*'
+          df.source_files = 'Source/LLGeneral/Common/Defines/**/*'
       end
   end
   
   #**********************
   # Math
   s.subspec 'Math' do |math|
-      math.source_files = 'LLGeneral/Classes/Math/**/*'
+      math.source_files = 'Source/LLGeneral/Math/**/*'
   end
   
   
   #**********************
   # PropertyWrapper
   s.subspec 'PropertyWrapper' do |pw|
-      pw.source_files = 'LLGeneral/Classes/PropertyWrapper/*'
+      pw.source_files = 'Source/LLGeneral/PropertyWrapper/*'
   end
   
   #**********************
@@ -60,22 +60,22 @@ Pod::Spec.new do |s|
   s.subspec 'Extensions' do |ext|
       # CoreGraphics
       ext.subspec 'CoreGraphics' do |cg|
-          cg.source_files = 'LLGeneral/Classes/Extensions/CoreGraphics/**/*'
+          cg.source_files = 'Source/LLGeneral/Extensions/CoreGraphics/**/*'
       end
       
       # CoreImage
       ext.subspec 'CoreImage' do |ci|
-          ci.source_files = 'LLGeneral/Classes/Extensions/CoreImage/**/*'
+          ci.source_files = 'Source/LLGeneral/Extensions/CoreImage/**/*'
       end
       
       # Foundation
       ext.subspec 'Foundation' do |fd|
-          fd.source_files = 'LLGeneral/Classes/Extensions/Foundation/**/*'
+          fd.source_files = 'Source/LLGeneral/Extensions/Foundation/**/*'
       end
       
       # UIKit
       ext.subspec 'UIKit' do |ui|
-          ui.source_files = 'LLGeneral/Classes/Extensions/UIKit/**/*'
+          ui.source_files = 'Source/LLGeneral/Extensions/UIKit/**/*'
       end
   end
 
@@ -86,12 +86,12 @@ Pod::Spec.new do |s|
 
     # LLGudie
     ui.subspec 'LLGudie' do |guide|
-        guide.source_files = 'LLGeneral/Classes/UI/LLGuide/*'
+        guide.source_files = 'Source/LLGeneral/UI/LLGuide/*'
     end
 
     # LLAbout
     ui.subspec 'LLAbout' do |about|
-        about.source_files = 'LLGeneral/Classes/UI/LLAbout/**/*'
+        about.source_files = 'Source/LLGeneral/UI/LLAbout/**/*'
         about.dependency 'SnapKit'
 #        about.dependency 'QMUIKit', '>= 4.1.3'
         about.dependency 'LLObject'
@@ -99,12 +99,12 @@ Pod::Spec.new do |s|
     
     # Performance
     ui.subspec 'Performance' do |pf|
-        pf.source_files = 'LLGeneral/Classes/UI/Performance/**/*'
+        pf.source_files = 'Source/LLGeneral/UI/Performance/**/*'
     end
     
     # PrivacyPolicy
     ui.subspec 'PrivacyPolicy' do |pp|
-        pp.source_files = 'LLGeneral/Classes/UI/PrivacyPolicy/**/*'
+        pp.source_files = 'Source/LLGeneral/UI/PrivacyPolicy/**/*'
         pp.dependency 'LLObject'
     end
     
@@ -113,11 +113,11 @@ Pod::Spec.new do |s|
   #**********************
   # File
   s.subspec 'File' do |file|
-      file.source_files = 'LLGeneral/Classes/File/**/*'
+      file.source_files = 'Source/LLGeneral/File/**/*'
   end
   
   # s.resource_bundles = {
-  #   'LLGeneral' => ['LLGeneral/Assets/*.png']
+  #   'LLGeneral' => ['Source/LLGeneral/Assets/*.png']
   # }
   
   s.default_subspec = 'Math', 'Extensions', 'Common', 'PropertyWrapper'

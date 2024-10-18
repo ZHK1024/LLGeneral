@@ -6,8 +6,8 @@
 //  
 //
 
-import Foundation
-import LLObject
+import UIKit
+//import LLObject
 
 public protocol LLPrivacyPolicyView: UIView {
     
