@@ -16,7 +16,7 @@ extension UIAlertController {
     ///   - message: 消息
     ///   - value:   默认输入信息
     ///   - placehodler: 提示信息
-    public static func input(title: String? = nil, message: String? = nil, values: [String]? = nil, placehodlers: [String]? = nil, keyboard: UIKeyboardType = .numberPad) async -> [String]? {
+    public static func input(_ viewController: UIViewController, title: String? = nil, message: String? = nil, values: [String]? = nil, placehodlers: [String]? = nil, keyboard: UIKeyboardType = .numberPad) async -> [String]? {
         await withCheckedContinuation { continuation in
             let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
             
@@ -39,7 +39,7 @@ extension UIAlertController {
             alert.addAction(UIAlertAction(title: "确定", style: .default, handler: { [weak alert] _ in
                 continuation.resume(with: .success(alert?.textFields?.map({ $0.text ?? "" })))
             }))
-            UIApplication.rootViewController?.present(alert, animated: true)
+            viewController.present(alert, animated: true)
         }
     }
     
